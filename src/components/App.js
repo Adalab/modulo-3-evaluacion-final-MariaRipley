@@ -1,0 +1,90 @@
+//react
+import { useEffect, useState } from "react";
+//styles
+import "../styles/App.scss";
+//images
+import logo from "../images/logo.png";
+//services
+import ls from "../services/localStorage";
+
+function App() {
+  // state
+  const [characterList, setCharacterList] = useState(
+    ls.get("characterList", [])
+  );
+  const [searchCharacter, setSearchCharacter] = useState(
+    ls.get("searchCharacter", "")
+  );
+
+  // effects
+  useEffect(() => {
+    fetch(
+      "https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const cleanData = data.results.map((eachCharacter) => {
+          const newData = {
+            id: eachCharacter.id,
+            image: eachCharacter.image,
+            name: eachCharacter.name,
+            species: eachCharacter.species,
+          };
+          return newData;
+        });
+        setCharacterList(cleanData);
+        ls.set("characterList", cleanData);
+      });
+  }, []);
+
+  useEffect(() => {
+    ls.set("searchCharacter", searchCharacter);
+  }, [searchCharacter]);
+
+  // render
+  const renderCharacterList = characterList.map((eachCharacter) => {
+    return (
+      <li key={eachCharacter.id}>
+        <article>
+          <img src={eachCharacter.image} alt="Imagen del personaje" />
+          <h2>{eachCharacter.name}</h2>
+          <p>{eachCharacter.species}</p>
+        </article>
+      </li>
+    );
+  });
+
+  // handler
+  const handleNameInput = (ev) => {
+    setSearchCharacter(ev.target.value);
+  };
+
+  return (
+    <>
+      <header className="header"></header>
+      <main className="main">
+        <section className="main__hero">
+          <img src={logo} alt="Logo de Rick and Morty" />
+        </section>
+        <section className="main__form">
+          <form action="./">
+            <input
+              type="text"
+              placeholder="¿Qué personaje buscas?"
+              name="searchCharacter"
+              id="searchCharacter"
+              value={searchCharacter}
+              onInput={handleNameInput}
+            />
+          </form>
+        </section>
+        <section className="main__list">
+          <ul>{renderCharacterList}</ul>
+        </section>
+      </main>
+      <footer className="footer"></footer>
+    </>
+  );
+}
+
+export default App;
