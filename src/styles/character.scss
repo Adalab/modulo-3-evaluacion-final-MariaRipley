@@ -1,9 +1,14 @@
 .cardContainer {
-    // display: flex;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  
 }
 
 .characterCard {
-    border: 1px solid black;
+    background-color: rgb(70, 242, 107);
     padding: 5px;
     width: 180px;
     display: flex;
@@ -13,5 +18,13 @@
     gap: 5px;
     &__img {
         width: 150px;
+    }
+    &__name {
+        font-family: sans-serif;
+        font-weight: bold;
+        
+    }
+    &__species {
+        font-family: sans-serif;
     }
 }

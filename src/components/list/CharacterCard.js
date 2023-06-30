@@ -8,8 +8,8 @@ function CharacterCard({ character }) {
         src={character.image}
         alt="Imagen del personaje"
       />
-      <h2>{character.name}</h2>
-      <p>{character.species}</p>
+      <h2 className="characterCard__name">{character.name}</h2>
+      <p className="characterCard__species">{character.species}</p>
     </article>
   );
 }

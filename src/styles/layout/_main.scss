@@ -1,0 +1,22 @@
+.main {
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__hero {
+        align-items: center;
+        justify-content: center;
+        &--img {
+           width: 500px;
+        }
+    }
+    &__form {
+        
+    }
+}
+
+.input {
+    height: 30px;
+    margin: 5px;
+}

@@ -52,11 +52,16 @@ function App() {
       <header className="header"></header>
       <main className="main">
         <section className="main__hero">
-          <img src={logo} alt="Logo de Rick and Morty" />
+          <img
+            className="main__hero--img"
+            src={logo}
+            alt="Logo de Rick and Morty"
+          />
         </section>
         <section className="main__form">
           <form action="./">
             <input
+              className="input nameInput"
               type="text"
               placeholder="¿Qué personaje buscas?"
               name="searchCharacter"
