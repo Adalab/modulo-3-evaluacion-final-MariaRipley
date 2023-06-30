@@ -6,6 +6,7 @@ import "../styles/App.scss";
 import logo from "../images/logo.png";
 //services
 import ls from "../services/localStorage";
+import objectAPI from "../services/fetch";
 //components
 import CharacterList from "./list/CharacterList";
 
@@ -20,23 +21,19 @@ function App() {
 
   // effects
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const cleanData = data.results.map((eachCharacter) => {
-          const newData = {
-            id: eachCharacter.id,
-            image: eachCharacter.image,
-            name: eachCharacter.name,
-            species: eachCharacter.species,
-          };
-          return newData;
-        });
-        setCharacterList(cleanData);
-        ls.set("characterList", cleanData);
+    objectAPI.getDataApi().then((dataApi) => {
+      const cleanData = dataApi.results.map((eachCharacter) => {
+        const newData = {
+          id: eachCharacter.id,
+          image: eachCharacter.image,
+          name: eachCharacter.name,
+          species: eachCharacter.species,
+        };
+        return newData;
       });
+      setCharacterList(cleanData);
+      ls.set("characterList", cleanData);
+    });
   }, []);
 
   useEffect(() => {
