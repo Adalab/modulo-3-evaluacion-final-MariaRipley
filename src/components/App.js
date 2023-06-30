@@ -6,6 +6,8 @@ import "../styles/App.scss";
 import logo from "../images/logo.png";
 //services
 import ls from "../services/localStorage";
+//components
+import CharacterList from "./list/CharacterList";
 
 function App() {
   // state
@@ -42,17 +44,6 @@ function App() {
   }, [searchCharacter]);
 
   // render
-  const renderCharacterList = characterList.map((eachCharacter) => {
-    return (
-      <li key={eachCharacter.id}>
-        <article>
-          <img src={eachCharacter.image} alt="Imagen del personaje" />
-          <h2>{eachCharacter.name}</h2>
-          <p>{eachCharacter.species}</p>
-        </article>
-      </li>
-    );
-  });
 
   // handler
   const handleNameInput = (ev) => {
@@ -79,7 +70,7 @@ function App() {
           </form>
         </section>
         <section className="main__list">
-          <ul>{renderCharacterList}</ul>
+          <CharacterList list={characterList} />
         </section>
       </main>
       <footer className="footer"></footer>
