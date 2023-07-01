@@ -19,6 +19,11 @@ function App() {
     ls.get("searchCharacter", "")
   );
 
+  //filters
+  const filteredCharacters = characterList.filter((eachCharacter) =>
+    eachCharacter.name.toLowerCase().includes(searchCharacter.toLowerCase())
+  );
+
   // effects
   useEffect(() => {
     objectAPI.getDataApi().then((dataApi) => {
@@ -72,7 +77,7 @@ function App() {
           </form>
         </section>
         <section className="main__list">
-          <CharacterList list={characterList} />
+          <CharacterList list={filteredCharacters} />
         </section>
       </main>
       <footer className="footer"></footer>

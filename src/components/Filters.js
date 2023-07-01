@@ -1,6 +1,6 @@
 function Filters(props) {
   return (
-    <form action="./">
+    <form>
       <input
         type="text"
         placeholder="¿Qué personaje buscas?"
