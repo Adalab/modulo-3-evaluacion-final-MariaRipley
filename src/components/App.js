@@ -9,6 +9,7 @@ import ls from "../services/localStorage";
 import objectAPI from "../services/fetch";
 //components
 import CharacterList from "./list/CharacterList";
+import Filters from "./filters/Filters";
 
 function App() {
   // state
@@ -48,8 +49,10 @@ function App() {
   // render
 
   // handler
-  const handleNameInput = (ev) => {
-    setSearchCharacter(ev.target.value);
+  const handleFilter = (varName, varValue) => {
+    if (varName === "name") {
+      setSearchCharacter(varValue);
+    }
   };
 
   return (
@@ -64,17 +67,10 @@ function App() {
           />
         </section>
         <section className="main__form">
-          <form action="./">
-            <input
-              className="input nameInput"
-              type="text"
-              placeholder="¿Qué personaje buscas?"
-              name="searchCharacter"
-              id="searchCharacter"
-              value={searchCharacter}
-              onInput={handleNameInput}
-            />
-          </form>
+          <Filters
+            searchCharacter={searchCharacter}
+            handleFilter={handleFilter}
+          />
         </section>
         <section className="main__list">
           <CharacterList list={filteredCharacters} />
