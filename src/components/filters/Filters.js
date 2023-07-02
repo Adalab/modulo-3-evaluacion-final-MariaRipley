@@ -6,7 +6,7 @@ function Filters({ searchCharacter, handleFilter, filteredCharacters }) {
   };
 
   const renderMessage = () => {
-    if (searchCharacter && filteredCharacters) {
+    if (searchCharacter && filteredCharacters.length === 0) {
       return (
         <p>
           No hay ningún personaje que coincida con la palabra "{searchCharacter}
@@ -18,7 +18,7 @@ function Filters({ searchCharacter, handleFilter, filteredCharacters }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <SearchCharacter
         searchCharacter={searchCharacter}
         handleFilter={handleFilter}

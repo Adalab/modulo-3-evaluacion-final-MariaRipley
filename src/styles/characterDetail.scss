@@ -1,0 +1,44 @@
+.main {
+    background-color: black;
+    height: 100vh;
+}
+
+.detailCardBorder {
+    
+    background-color: black;
+    &__link {
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        padding: 5px;
+        position: relative;
+        left: 65%;
+    }
+    
+}
+
+.detailCard {
+    background-color: rgb(66, 208, 208);
+    width: 60%;
+    margin: auto;
+    &__img {
+        width: 80%;
+        position: relative;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    &__text {
+        color: black;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        font-family: sans-serif;
+        line-height: 30px;
+        &--name {
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding-bottom: 5px;
+        }
+    }
+}

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faAllergies } from "@fortawesome/free-solid-svg-icons";
+import style from "../styles/characterDetail.scss";
+import mainStyle from "../styles/layout/_main.scss";
 
 function CharacterDetail({ characterData }) {
   const getSpeciesIcon = () => {
@@ -26,19 +28,29 @@ function CharacterDetail({ characterData }) {
   if (characterData) {
     return (
       <div className="detailCardBorder">
-        <Link to="/">Volver</Link>
+        <Link to="/" className="detailCardBorder__link">
+          Volver
+        </Link>
         <div className="detailCard">
           <img
             className="detailCard__img"
             src={characterData.image}
             alt="Imagen del personaje"
           />
-          <section>
-            <h3>{characterData.name}</h3>
-            <p>Status: {getStatusIcon()}</p>
-            <p>Species: {getSpeciesIcon()}</p>
-            <p>Origin: {characterData.origin}</p>
-            <p>Episodes: {characterData.episode.length}</p>
+          <section className="detailCard__text">
+            <h3 className="detailCard__text--name">{characterData.name}</h3>
+            <p className="detailCard__text--status">
+              Status: {getStatusIcon()}
+            </p>
+            <p className="detailCard__text--species">
+              Species: {getSpeciesIcon()}
+            </p>
+            <p className="detailCard__text--origin">
+              Origin: {characterData.origin}
+            </p>
+            <p className="detailCard__text--episodes">
+              Episodes: {characterData.episode.length}
+            </p>
           </section>
         </div>
       </div>

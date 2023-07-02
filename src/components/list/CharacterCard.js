@@ -14,7 +14,7 @@ function CharacterCard({ character }) {
     }
   };
   return (
-    <Link to={"/character/" + character.id}>
+    <Link to={"/character/" + character.id} className="cardLink">
       <article className="characterCard">
         <img
           className="characterCard__img"

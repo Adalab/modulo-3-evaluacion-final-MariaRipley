@@ -1,0 +1,12 @@
+.header {
+    background-color: black;    
+    &__img {
+        width: 100%;
+        @media screen and (min-width: 768px){
+            width: 50%;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+}
