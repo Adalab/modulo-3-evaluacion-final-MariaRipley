@@ -1,8 +1,9 @@
 import "../../styles/character.scss";
+import { Link } from "react-router-dom";
 
 function CharacterCard({ character }) {
   return (
-    <a href={"/character/" + character.id}>
+    <Link to={"/character/" + character.id}>
       <article className="characterCard">
         <img
           className="characterCard__img"
@@ -12,7 +13,7 @@ function CharacterCard({ character }) {
         <h2 className="characterCard__name">{character.name}</h2>
         <p className="characterCard__species">{character.species}</p>
       </article>
-    </a>
+    </Link>
   );
 }
 

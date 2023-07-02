@@ -1,5 +1,7 @@
 //react
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useLocation, matchPath } from "react-router-dom";
 //styles
 import "../styles/App.scss";
 //images
@@ -8,8 +10,8 @@ import logo from "../images/logo.png";
 import ls from "../services/localStorage";
 import objectAPI from "../services/fetch";
 //components
-import CharacterList from "./list/CharacterList";
-import Filters from "./filters/Filters";
+import CharacterDetail from "./CharacterDetail";
+import Landing from "./Landing";
 
 function App() {
   // state
@@ -34,6 +36,9 @@ function App() {
           image: eachCharacter.image,
           name: eachCharacter.name,
           species: eachCharacter.species,
+          status: eachCharacter.status,
+          origin: eachCharacter.origin.name,
+          episode: eachCharacter.episode,
         };
         return newData;
       });
@@ -55,26 +60,39 @@ function App() {
     }
   };
 
+  // contact info
+  const { pathname } = useLocation();
+
+  const routeData = matchPath("character/:characterId", pathname);
+
+  const characterId = routeData?.params.characterId;
+
+  const characterData = characterList.find(
+    (character) => character.id === parseInt(characterId)
+  );
+
   return (
     <>
-      <header className="header"></header>
+      <header className="header">
+        <img className="header__img" src={logo} alt="Logo de Rick and Morty" />
+      </header>
       <main className="main">
-        <section className="main__hero">
-          <img
-            className="main__hero--img"
-            src={logo}
-            alt="Logo de Rick and Morty"
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Landing
+                searchCharacter={searchCharacter}
+                handleFilter={handleFilter}
+                filteredCharacters={filteredCharacters}
+              />
+            }
           />
-        </section>
-        <section className="main__form">
-          <Filters
-            searchCharacter={searchCharacter}
-            handleFilter={handleFilter}
+          <Route
+            path="/character/:characterId"
+            element={<CharacterDetail characterData={characterData} />}
           />
-        </section>
-        <section className="main__list">
-          <CharacterList list={filteredCharacters} />
-        </section>
+        </Routes>
       </main>
       <footer className="footer"></footer>
     </>

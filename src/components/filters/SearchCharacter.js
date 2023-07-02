@@ -1,7 +1,6 @@
 function SearchCharacter({ searchCharacter, handleFilter }) {
   const handleNameInput = (ev) => {
     handleFilter("name", ev.target.value);
-    // setSearchCharacter(ev.target.value);
   };
   return (
     <input
