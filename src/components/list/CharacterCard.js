@@ -1,7 +1,18 @@
 import "../../styles/character.scss";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faAllergies } from "@fortawesome/free-solid-svg-icons";
 
 function CharacterCard({ character }) {
+  const getSpeciesIcon = () => {
+    if (character.species === "Human") {
+      return <FontAwesomeIcon icon={faUser} />;
+    } else if (character.species === "Alien") {
+      return <FontAwesomeIcon icon={faAllergies} />;
+    } else {
+      return null;
+    }
+  };
   return (
     <Link to={"/character/" + character.id}>
       <article className="characterCard">
@@ -11,7 +22,7 @@ function CharacterCard({ character }) {
           alt="Imagen del personaje"
         />
         <h2 className="characterCard__name">{character.name}</h2>
-        <p className="characterCard__species">{character.species}</p>
+        <div className="characterCard__species">{getSpeciesIcon()}</div>
       </article>
     </Link>
   );

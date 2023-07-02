@@ -1,6 +1,28 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faAllergies } from "@fortawesome/free-solid-svg-icons";
 
 function CharacterDetail({ characterData }) {
+  const getSpeciesIcon = () => {
+    if (characterData.species === "Human") {
+      return <FontAwesomeIcon icon={faUser} />;
+    } else if (characterData.species === "Alien") {
+      return <FontAwesomeIcon icon={faAllergies} />;
+    } else {
+      return null;
+    }
+  };
+
+  const getStatusIcon = () => {
+    if (characterData.status === "Dead") {
+      return <FontAwesomeIcon icon={faUser} />;
+    } else if (characterData.status === "Alive") {
+      return <FontAwesomeIcon icon={faUser} />;
+    } else {
+      return null;
+    }
+  };
+
   if (characterData) {
     return (
       <div className="detailCardBorder">
@@ -13,8 +35,8 @@ function CharacterDetail({ characterData }) {
           />
           <section>
             <h3>{characterData.name}</h3>
-            <p>Status: {characterData.status}</p>
-            <p>Species: {characterData.species}</p>
+            <p>Status: {getStatusIcon()}</p>
+            <p>Species: {getSpeciesIcon()}</p>
             <p>Origin: {characterData.origin}</p>
             <p>Episodes: {characterData.episode.length}</p>
           </section>
