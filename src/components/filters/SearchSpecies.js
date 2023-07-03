@@ -7,9 +7,9 @@ function SearchSpecies({ handleFilter, searchSpecies }) {
   };
   return (
     <select
+      defaultValue={"all"}
       className="input speciesSelect"
       onChange={handleSpeciesInput}
-      value={searchSpecies}
     >
       <option value="all">Filtra por especie</option>
       <option value="Human">Humano</option>
@@ -27,7 +27,7 @@ SearchSpecies.defaultProps = {
   handleFilter: () => {
     console.log("Función manejadora de los filtros");
   },
-  searchSpecies: "Human",
+  searchSpecies: "Humano",
 };
 
 export default SearchSpecies;

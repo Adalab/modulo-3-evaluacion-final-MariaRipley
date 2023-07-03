@@ -31,7 +31,12 @@ function Filters({
 
   return (
     <>
-      <form className="form" onSubmit={handleSubmit}>
+      <form
+        className="form"
+        onSubmit={handleSubmit}
+        id="searchForm"
+        name="searchForm"
+      >
         <SearchCharacter
           searchCharacter={searchCharacter}
           handleFilter={handleFilter}
