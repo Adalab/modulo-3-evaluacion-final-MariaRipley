@@ -17,4 +17,8 @@ CharacterList.propTypes = {
   list: PropTypes.array,
 };
 
+CharacterList.defaultProps = {
+  list: ["Personaje 1", "Personaje 2", "Personaje 3"],
+};
+
 export default CharacterList;

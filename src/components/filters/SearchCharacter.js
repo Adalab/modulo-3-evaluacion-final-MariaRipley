@@ -22,4 +22,11 @@ SearchCharacter.propTypes = {
   handleFilter: PropTypes.func,
 };
 
+SearchCharacter.defaultProps = {
+  searchCharacter: "Rick",
+  handleFilter: () => {
+    console.log("Función manejadora de los filtros");
+  },
+};
+
 export default SearchCharacter;

@@ -23,4 +23,11 @@ SearchSpecies.propTypes = {
   searchSpecies: PropTypes.string,
 };
 
+SearchSpecies.defaultProps = {
+  handleFilter: () => {
+    console.log("Función manejadora de los filtros");
+  },
+  searchSpecies: "Human",
+};
+
 export default SearchSpecies;

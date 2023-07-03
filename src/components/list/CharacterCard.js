@@ -33,4 +33,10 @@ CharacterCard.propTypes = {
   character: PropTypes.object,
 };
 
+CharacterCard.defaultProps = {
+  character: {
+    species: "Human",
+  },
+};
+
 export default CharacterCard;

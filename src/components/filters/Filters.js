@@ -53,4 +53,16 @@ Filters.propTypes = {
   searchSpecies: PropTypes.string,
 };
 
+Filters.defaultProps = {
+  searchCharacter: "Rick",
+  handleFilter: () => {
+    console.log("Función manejadora de los filtros");
+  },
+  filteredCharacters: {
+    name: "Rick Sanchez",
+    species: "Human",
+  },
+  searchSpecies: "Human",
+};
+
 export default Filters;

@@ -25,4 +25,15 @@ Landing.propTypes = {
   filteredCharacters: PropTypes.array,
 };
 
+Landing.defaultProps = {
+  searchCharacter: "Rick",
+  handleFilter: () => {
+    console.log("Función manejadora de los filtros");
+  },
+  filteredCharacters: {
+    name: "Rick Sanchez",
+    species: "Human",
+  },
+};
+
 export default Landing;

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faAllergies } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import "../styles/characterDetail.scss";
+import wubba from "../images/wubba.jpg";
 
 function CharacterDetail({ characterData }) {
   const getSpeciesIcon = () => {
@@ -67,6 +68,17 @@ function CharacterDetail({ characterData }) {
 
 CharacterDetail.propTypes = {
   characterData: PropTypes.object,
+};
+
+CharacterDetail.defaultProps = {
+  characterData: {
+    image: { wubba },
+    name: "Rick Sanchez",
+    status: "Alive",
+    species: "Human",
+    origin: "Earth (C-137)",
+    episodes: "31,",
+  },
 };
 
 export default CharacterDetail;
