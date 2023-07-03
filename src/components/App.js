@@ -110,7 +110,19 @@ function App() {
           />
         </Routes>
       </main>
-      <footer className="footer"></footer>
+      <footer className="footer">
+        <p className="footer__text">
+          &copy; María Robles para Promo T de{" "}
+          <a
+            className="adalab"
+            target="_blank"
+            rel="noreferrer"
+            href="https://https://adalab.es/"
+          >
+            Adalab
+          </a>
+        </p>
+      </footer>
     </>
   );
 }

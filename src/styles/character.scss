@@ -26,4 +26,8 @@
 
 .cardLink {
     text-decoration: none;
+    :hover {
+        background-color: rgba(0, 255, 83, 1);
+        box-shadow: 0 0 10px 0 rgb(66, 208, 208);
+    }
 }
