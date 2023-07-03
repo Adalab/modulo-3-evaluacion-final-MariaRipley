@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/modulo-3-evaluacion-final-MariaRipley/static/css/main.814fdf97.css",
+    "main.js": "/modulo-3-evaluacion-final-MariaRipley/static/js/main.1c10d4c5.js",
+    "static/media/logo.png": "/modulo-3-evaluacion-final-MariaRipley/static/media/logo.ac5509cfbeccebd423c0.png",
+    "index.html": "/modulo-3-evaluacion-final-MariaRipley/index.html",
+    "main.814fdf97.css.map": "/modulo-3-evaluacion-final-MariaRipley/static/css/main.814fdf97.css.map",
+    "main.1c10d4c5.js.map": "/modulo-3-evaluacion-final-MariaRipley/static/js/main.1c10d4c5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.814fdf97.css",
+    "static/js/main.1c10d4c5.js"
+  ]
+}
