@@ -8,7 +8,7 @@ function Filters({ searchCharacter, handleFilter, filteredCharacters }) {
   const renderMessage = () => {
     if (searchCharacter && filteredCharacters.length === 0) {
       return (
-        <p>
+        <p className="errorSearchMessage">
           No hay ningún personaje que coincida con la palabra "{searchCharacter}
           "
         </p>

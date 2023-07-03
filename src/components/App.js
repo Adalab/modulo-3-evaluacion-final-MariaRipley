@@ -42,8 +42,12 @@ function App() {
         };
         return newData;
       });
-      setCharacterList(cleanData);
-      ls.set("characterList", cleanData);
+
+      const sortedData = [...cleanData].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      setCharacterList(sortedData);
+      ls.set("characterList", sortedData);
     });
   }, []);
 
