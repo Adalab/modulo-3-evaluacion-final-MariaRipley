@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/modulo-3-evaluacion-final-MariaRipley/static/css/main.814fdf97.css",
-    "main.js": "/modulo-3-evaluacion-final-MariaRipley/static/js/main.1c10d4c5.js",
+    "main.css": "/modulo-3-evaluacion-final-MariaRipley/static/css/main.05780b82.css",
+    "main.js": "/modulo-3-evaluacion-final-MariaRipley/static/js/main.edcc8d8f.js",
     "static/media/logo.png": "/modulo-3-evaluacion-final-MariaRipley/static/media/logo.ac5509cfbeccebd423c0.png",
+    "static/media/wubba.jpg": "/modulo-3-evaluacion-final-MariaRipley/static/media/wubba.df36c0e5b9e02b1bb29f.jpg",
     "index.html": "/modulo-3-evaluacion-final-MariaRipley/index.html",
-    "main.814fdf97.css.map": "/modulo-3-evaluacion-final-MariaRipley/static/css/main.814fdf97.css.map",
-    "main.1c10d4c5.js.map": "/modulo-3-evaluacion-final-MariaRipley/static/js/main.1c10d4c5.js.map"
+    "main.05780b82.css.map": "/modulo-3-evaluacion-final-MariaRipley/static/css/main.05780b82.css.map",
+    "main.edcc8d8f.js.map": "/modulo-3-evaluacion-final-MariaRipley/static/js/main.edcc8d8f.js.map"
   },
   "entrypoints": [
-    "static/css/main.814fdf97.css",
-    "static/js/main.1c10d4c5.js"
+    "static/css/main.05780b82.css",
+    "static/js/main.edcc8d8f.js"
   ]
 }
