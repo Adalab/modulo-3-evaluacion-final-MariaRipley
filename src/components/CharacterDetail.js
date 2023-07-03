@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faAllergies } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSmile,
+  faSpaghettiMonsterFlying,
+  faSkullCrossbones,
+  faThumbsUp,
+} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import "../styles/characterDetail.scss";
 import wubba from "../images/wubba.jpg";
@@ -8,9 +13,9 @@ import wubba from "../images/wubba.jpg";
 function CharacterDetail({ characterData }) {
   const getSpeciesIcon = () => {
     if (characterData.species === "Human") {
-      return <FontAwesomeIcon icon={faUser} />;
+      return <FontAwesomeIcon icon={faSmile} />;
     } else if (characterData.species === "Alien") {
-      return <FontAwesomeIcon icon={faAllergies} />;
+      return <FontAwesomeIcon icon={faSpaghettiMonsterFlying} />;
     } else {
       return null;
     }
@@ -18,9 +23,9 @@ function CharacterDetail({ characterData }) {
 
   const getStatusIcon = () => {
     if (characterData.status === "Dead") {
-      return <FontAwesomeIcon icon={faUser} />;
+      return <FontAwesomeIcon icon={faSkullCrossbones} />;
     } else if (characterData.status === "Alive") {
-      return <FontAwesomeIcon icon={faUser} />;
+      return <FontAwesomeIcon icon={faThumbsUp} />;
     } else {
       return null;
     }
