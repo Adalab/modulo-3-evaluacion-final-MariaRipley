@@ -21,11 +21,20 @@ function App() {
   const [searchCharacter, setSearchCharacter] = useState(
     ls.get("searchCharacter", "")
   );
+  const [searchSpecies, setSearchSpecies] = useState("all");
 
   //filters
-  const filteredCharacters = characterList.filter((eachCharacter) =>
-    eachCharacter.name.toLowerCase().includes(searchCharacter.toLowerCase())
-  );
+  const filteredCharacters = characterList
+    .filter((eachCharacter) =>
+      eachCharacter.name.toLowerCase().includes(searchCharacter.toLowerCase())
+    )
+    .filter((eachCharacter) => {
+      if (searchSpecies === "all" || searchSpecies === "") {
+        return true;
+      } else {
+        return eachCharacter.species === searchSpecies;
+      }
+    });
 
   // effects
   useEffect(() => {
@@ -61,6 +70,8 @@ function App() {
   const handleFilter = (varName, varValue) => {
     if (varName === "name") {
       setSearchCharacter(varValue);
+    } else if (varName === "species") {
+      setSearchSpecies(varValue);
     }
   };
 
@@ -87,6 +98,7 @@ function App() {
             element={
               <Landing
                 searchCharacter={searchCharacter}
+                searchSpecies={searchSpecies}
                 handleFilter={handleFilter}
                 filteredCharacters={filteredCharacters}
               />

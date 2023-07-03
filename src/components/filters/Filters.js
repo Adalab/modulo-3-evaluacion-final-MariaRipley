@@ -1,6 +1,12 @@
 import SearchCharacter from "./SearchCharacter";
+import SearchSpecies from "./SearchSpecies";
 
-function Filters({ searchCharacter, handleFilter, filteredCharacters }) {
+function Filters({
+  searchCharacter,
+  handleFilter,
+  filteredCharacters,
+  searchSpecies,
+}) {
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
@@ -24,6 +30,10 @@ function Filters({ searchCharacter, handleFilter, filteredCharacters }) {
         handleFilter={handleFilter}
       />
       {renderMessage()}
+      <SearchSpecies
+        searchSpecies={searchSpecies}
+        handleFilter={handleFilter}
+      />
     </form>
   );
 }
