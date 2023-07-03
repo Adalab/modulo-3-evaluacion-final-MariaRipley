@@ -2,6 +2,7 @@ import "../../styles/character.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faAllergies } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
 function CharacterCard({ character }) {
   const getSpeciesIcon = () => {
@@ -27,5 +28,9 @@ function CharacterCard({ character }) {
     </Link>
   );
 }
+
+CharacterCard.propTypes = {
+  character: PropTypes.object,
+};
 
 export default CharacterCard;

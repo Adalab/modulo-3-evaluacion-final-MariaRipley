@@ -1,5 +1,8 @@
 import SearchCharacter from "./SearchCharacter";
 import SearchSpecies from "./SearchSpecies";
+import "../../styles/layout/form.scss";
+import wubba from "../../images/wubba.jpg";
+import PropTypes from "prop-types";
 
 function Filters({
   searchCharacter,
@@ -14,28 +17,40 @@ function Filters({
   const renderMessage = () => {
     if (searchCharacter && filteredCharacters.length === 0) {
       return (
-        <p className="errorSearchMessage">
-          No hay ningún personaje que coincida con la palabra "{searchCharacter}
-          "
-        </p>
+        <>
+          <img className="messageImg" src={wubba} alt="Rick triste" />
+          <p className="errorSearchMessage">
+            No hay ningún personaje que coincida con la palabra "
+            {searchCharacter}"
+          </p>
+        </>
       );
     }
     return null;
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <SearchCharacter
-        searchCharacter={searchCharacter}
-        handleFilter={handleFilter}
-      />
+    <>
+      <form className="form" onSubmit={handleSubmit}>
+        <SearchCharacter
+          searchCharacter={searchCharacter}
+          handleFilter={handleFilter}
+        />
+        <SearchSpecies
+          searchSpecies={searchSpecies}
+          handleFilter={handleFilter}
+        />
+      </form>
       {renderMessage()}
-      <SearchSpecies
-        searchSpecies={searchSpecies}
-        handleFilter={handleFilter}
-      />
-    </form>
+    </>
   );
 }
+
+Filters.propTypes = {
+  searchCharacter: PropTypes.string,
+  handleFilter: PropTypes.func,
+  filteredCharacters: PropTypes.array,
+  searchSpecies: PropTypes.string,
+};
 
 export default Filters;

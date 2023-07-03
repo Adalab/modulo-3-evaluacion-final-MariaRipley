@@ -1,5 +1,6 @@
 import Filters from "./filters/Filters";
 import CharacterList from "./list/CharacterList";
+import PropTypes from "prop-types";
 
 function Landing({ searchCharacter, handleFilter, filteredCharacters }) {
   return (
@@ -17,5 +18,11 @@ function Landing({ searchCharacter, handleFilter, filteredCharacters }) {
     </>
   );
 }
+
+Landing.propTypes = {
+  searchCharacter: PropTypes.string,
+  handleFilter: PropTypes.func,
+  filteredCharacters: PropTypes.array,
+};
 
 export default Landing;

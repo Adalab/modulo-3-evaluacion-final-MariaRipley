@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faAllergies } from "@fortawesome/free-solid-svg-icons";
-import style from "../styles/characterDetail.scss";
-import mainStyle from "../styles/layout/_main.scss";
+import PropTypes from "prop-types";
+import "../styles/characterDetail.scss";
 
 function CharacterDetail({ characterData }) {
   const getSpeciesIcon = () => {
@@ -64,5 +64,9 @@ function CharacterDetail({ characterData }) {
     );
   }
 }
+
+CharacterDetail.propTypes = {
+  characterData: PropTypes.object,
+};
 
 export default CharacterDetail;

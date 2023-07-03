@@ -1,4 +1,5 @@
 import CharacterCard from "./CharacterCard";
+import PropTypes from "prop-types";
 
 function CharacterList({ list }) {
   const listLi = list.map((eachCharacter) => {
@@ -11,5 +12,9 @@ function CharacterList({ list }) {
 
   return <ul className="cardsContainer">{listLi}</ul>;
 }
+
+CharacterList.propTypes = {
+  list: PropTypes.array,
+};
 
 export default CharacterList;

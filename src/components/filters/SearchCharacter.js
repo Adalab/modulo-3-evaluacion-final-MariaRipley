@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function SearchCharacter({ searchCharacter, handleFilter }) {
   const handleNameInput = (ev) => {
     handleFilter("name", ev.target.value);
@@ -14,5 +16,10 @@ function SearchCharacter({ searchCharacter, handleFilter }) {
     />
   );
 }
+
+SearchCharacter.propTypes = {
+  searchCharacter: PropTypes.string,
+  handleFilter: PropTypes.func,
+};
 
 export default SearchCharacter;

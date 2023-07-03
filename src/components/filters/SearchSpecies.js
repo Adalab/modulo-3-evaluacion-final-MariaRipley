@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function SearchSpecies({ handleFilter, searchSpecies }) {
   const handleSpeciesInput = (ev) => {
     ev.preventDefault();
@@ -5,7 +7,7 @@ function SearchSpecies({ handleFilter, searchSpecies }) {
   };
   return (
     <select
-      className="speciesSelect"
+      className="input speciesSelect"
       onChange={handleSpeciesInput}
       value={searchSpecies}
     >
@@ -15,5 +17,10 @@ function SearchSpecies({ handleFilter, searchSpecies }) {
     </select>
   );
 }
+
+SearchSpecies.propTypes = {
+  handleFilter: PropTypes.func,
+  searchSpecies: PropTypes.string,
+};
 
 export default SearchSpecies;
