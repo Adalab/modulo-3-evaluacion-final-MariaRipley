@@ -12,6 +12,8 @@ import objectAPI from "../services/fetch";
 //components
 import CharacterDetail from "./CharacterDetail";
 import Landing from "./Landing";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   // state
@@ -88,9 +90,7 @@ function App() {
 
   return (
     <>
-      <header className="header">
-        <img className="header__img" src={logo} alt="Logo de Rick and Morty" />
-      </header>
+      <Header logo={logo} />
       <main className="main">
         <Routes>
           <Route
@@ -110,19 +110,7 @@ function App() {
           />
         </Routes>
       </main>
-      <footer className="footer">
-        <p className="footer__text">
-          &copy; María Robles para Promo T de{" "}
-          <a
-            className="adalab"
-            target="_blank"
-            rel="noreferrer"
-            href="https://https://adalab.es/"
-          >
-            Adalab
-          </a>
-        </p>
-      </footer>
+      <Footer />
     </>
   );
 }
