@@ -17,13 +17,13 @@ function Filters({
   const renderMessage = () => {
     if (searchCharacter && filteredCharacters.length === 0) {
       return (
-        <>
+        <div className="messageContainer">
           <img className="messageImg" src={wubba} alt="Rick triste" />
           <p className="errorSearchMessage">
             No hay ningún personaje que coincida con la palabra "
             {searchCharacter}"
           </p>
-        </>
+        </div>
       );
     }
     return null;

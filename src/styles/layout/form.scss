@@ -27,6 +27,10 @@
     }
 }
 
+.messageContainer {
+    height: 100vh;
+}
+
 .errorSearchMessage {
     background-color: $secondary-color;
     font-family: $text-font;
@@ -45,6 +49,7 @@
     position: relative;
     left: 50%;
     transform: translate(-50%);
+    
 }
 
 
