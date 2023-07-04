@@ -1,3 +1,5 @@
+@import '../core/variables';
+
 .form {
     display: flex;
     flex-direction: column;
@@ -11,15 +13,13 @@
 
 .input {
     height: 30px;
-    box-shadow: 0 0 20px 0 rgba(0,255,83,1);
+    box-shadow: $box-shadow;
     border-radius: 5px;
-    border-color: rgb(66, 208, 208);
+    border-color: $primary-color;
     width: 50%;
-    :hover {
-        
-                display: block;
-                opacity: 1;
-            
+    :hover {        
+        display: block;
+        opacity: 1;
     }
     @media screen and (min-width: 768px) {
         width: 20%;
@@ -28,8 +28,8 @@
 }
 
 .errorSearchMessage {
-    background-color: rgba(0, 255, 83, 1);
-    font-family: sans-serif;
+    background-color: $secondary-color;
+    font-family: $text-font;
     margin-top: 20px;
     width: 50%;
     text-align: center;
@@ -37,7 +37,7 @@
     left: 50%;
     transform: translate(-50%);
     padding: 5px;
-    box-shadow: 0 0 20px 0 rgb(66, 208, 208);
+    box-shadow: $box-shadow-rev;
     color: teal;
 }
 

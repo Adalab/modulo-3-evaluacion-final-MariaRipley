@@ -1,7 +1,7 @@
 .footer {
-    background-color: black;
-    color: white;
-    font-family: sans-serif;
+    background-color: $bg-color;
+    color: $text-color;
+    font-family: $text-font;
     padding: 20px;
     font-size: 1.5rem;
 }

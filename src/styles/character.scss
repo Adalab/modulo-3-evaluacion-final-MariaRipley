@@ -1,6 +1,8 @@
+@import './core/variables';
+
 .characterCard {
-    background-color: rgb(66, 208, 208);
-    box-shadow: 0 0 10px 0 rgba(0, 255, 83, 1);
+    background-color: $primary-color;
+    box-shadow: $box-shadow;
     padding: 5px;
     width: 180px;
     height: 220px;
@@ -13,21 +15,21 @@
         width: 150px;
     }
     &__name {
-        font-family: sans-serif;
+        font-family: $text-font;
         font-weight: bold;
-        color: black;
+        color: $bg-color;
         text-decoration: none;
         
     }
     &__species {
-        color: black;
+        color: $bg-color;
     }
 }
 
 .cardLink {
     text-decoration: none;
     :hover {
-        background-color: rgba(0, 255, 83, 1);
-        box-shadow: 0 0 10px 0 rgb(66, 208, 208);
+        background-color: $secondary-color;
+        box-shadow: $box-shadow-rev;
     }
 }

@@ -1,28 +1,30 @@
+@import './core/variables';
+
 .main {
-    background-color: black;
+    background-color: $bg-color;
     
 }
 
 .detailCardBorder {
-    background-color: black;
+    background-color: $bg-color;
     height: 100vh;
     &__link {
         text-decoration: none;
-        color: white;
+        color: $text-color;
         display: inline-block;
         padding: 5px;
         position: relative;
         left: 65%;
-        font-family: sans-serif;
+        font-family: $text-font
     }
     
 }
 
 .detailCard {
-    background-color: rgb(66, 208, 208);
+    background-color: $primary-color;
     width: 60%;
     margin: auto;
-    box-shadow: 0 0 20px 0 rgba(0, 255, 83, 1);
+    box-shadow: $box-shadow;
     &__img {
         width: 80%;
         position: relative;
@@ -38,10 +40,10 @@
         }
     }
     &__text {
-        color: black;
+        color: $bg-color;
         padding-left: 20px;
         padding-bottom: 20px;
-        font-family: sans-serif;
+        font-family: $text-font;
         line-height: 30px;
         @media screen and (min-width: 768px) {
            line-height: 1.5;
