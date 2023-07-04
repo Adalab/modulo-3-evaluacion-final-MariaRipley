@@ -89,7 +89,7 @@ function App() {
   );
 
   return (
-    <>
+    <div className="page">
       <Header logo={logo} />
       <main className="main">
         <Routes>
@@ -111,7 +111,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
